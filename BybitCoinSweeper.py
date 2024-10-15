@@ -54,8 +54,8 @@ def play_sweeper(url):
     headers['Authorization'] = f"Bearer {data['accessToken']}"
     playgame = requests.post('https://api.bybitcoinsweeper.com/api/games/start', headers=headers).json()
     userdata = requests.get("https://api.bybitcoinsweeper.com/api/users/me", headers=headers).json()
-    min_game_time = 700
-    max_game_time = 12000
+    min_game_time = 5
+    max_game_time = 20
     game_time = random.randint(min_game_time, max_game_time)
     gameid = playgame["id"]
     rewarddata = playgame["rewards"]
